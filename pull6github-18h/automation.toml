@@ -1,0 +1,14 @@
+version = 1
+id = "pull6github-18h"
+kind = "cron"
+name = "PULL-JOURNAUX 18H"
+prompt = "Controle uniquement le repo `C:\\Users\\engue\\__SYSTEME - GITHUB__\\JOURNAUX`.\n\nObjectif :\nverifier si `main` est en retard sur `origin/main`, puis executer un `pull --ff-only` uniquement si les conditions sont propres.\n\nRegles de cadrage :\n- ne pas scanner `__SYSTEME - GITHUB__`\n- ne pas faire de decouverte recursive de depots\n- ne pas utiliser de helper PowerShell complexe\n- ne pas manipuler a la fois `http_proxy` et `HTTP_PROXY` comme variables distinctes: PowerShell est insensible a la casse\n- ne pas transformer les lignes de progression Git sur stderr en erreur si le code de sortie est `0`\n- s appuyer sur les commandes Git directes et leur code de sortie\n\nSequence attendue :\n1. Lire la memoire de l automation si elle existe.\n2. Travailler uniquement dans `C:\\Users\\engue\\__SYSTEME - GITHUB__\\JOURNAUX`.\n3. Verifier que le dossier est bien un depot Git valide.\n4. Lire :\n   - branche courante\n   - tracking branch\n   - etat dirty ou propre\n5. Ne jamais changer de branche.\n6. Si la branche courante n est pas `main`, classer en `vigilance` et s arreter sans pull.\n7. Executer uniquement cette commande distante de controle :\n   - `git -c http.proxy= -c https.proxy= fetch origin --prune`\n8. Comparer `main` a `origin/main` et classer l etat :\n   - `behind`\n   - `ahead`\n   - `diverged`\n   - `up_to_date`\n9. Executer `git -c http.proxy= -c https.proxy= pull --ff-only origin main` seulement si :\n   - branche courante = `main`\n   - tracking branch = `origin/main`\n   - repo propre\n   - etat = `behind`\n10. Si `fetch` ou `pull` echoue avec code de sortie non nul, classer en `vigilance` et joindre seulement :\n   - la commande en echec\n   - le message Git principal\n\nInterdictions strictes :\n- aucun scan d autres repos\n- aucun `merge` manuel\n- aucun `reset`\n- aucune action destructive\n- aucun changement de branche\n- aucun auto-diagnostic proxy verbeux\n- aucune boucle de relance speculative\n\nFormat de sortie attendu :\n- `repo`: `JOURNAUX`\n- `branche courante`\n- `tracking branch`\n- `etat`\n- `action`: `pull effectue` | `pull requis` | `pas de pull requis` | `vigilance`\n- `reserves`\n\nConclusion finale :\n1. `Pull effectue` ou `Aucun pull effectue`\n2. `Etat final du repo JOURNAUX`\n3. `Vigilance` si applicable\n\nMemoire :\n- mettre a jour `memory.md` avec un resume tres court du run, l horodatage et le resultat final."
+status = "ACTIVE"
+rrule = "RRULE:FREQ=WEEKLY;BYHOUR=18;BYMINUTE=0;BYDAY=SU,MO,TU,WE,TH,FR,SA"
+model = "gpt-5.4"
+reasoning_effort = "medium"
+execution_environment = "local"
+cwds = ["C:\\Users\\engue\\__SYSTEME - GITHUB__\\JOURNAUX"]
+created_at = 1776714983904
+updated_at = 1776726610421
+

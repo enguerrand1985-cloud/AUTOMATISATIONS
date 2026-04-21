@@ -1,0 +1,11 @@
+memory.md
+*.db
+*.sqlite
+*.sqlite3
+*.log
+state/
+runtime/
+tmp/
+temp/
+.DS_Store
+

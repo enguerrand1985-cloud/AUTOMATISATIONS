@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "document_type": "automations_sync_index",
+    "version": "1.0.0",
+    "status": "active",
+    "language": "fr"
+  },
+  "root": {
+    "github_automations_root": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS",
+    "local_runtime_root": "C:/Users/engue/.codex/automations"
+  },
+  "defaults": {
+    "component_status": "github-mirror",
+    "truth_direction": "local_active_to_github",
+    "automation_target": "prepare-sync",
+    "runtime_truth": "C:/Users/engue/.codex/automations",
+    "versioned_mirror": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS",
+    "versioned_payload": [
+      "automation.toml"
+    ],
+    "excluded_runtime_payload": [
+      "memory.md",
+      "sqlite",
+      "logs",
+      "temporary_state",
+      "machine_specific_runtime_state"
+    ],
+    "conflict_policy": "stop_on_conflict_both_sides"
+  },
+  "automations": [
+    {
+      "id": "pull-github",
+      "label": "PULL-JOURNAUX 12H",
+      "local_runtime_path": "C:/Users/engue/.codex/automations/pull-github",
+      "github_mirror_path": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS/pull-github",
+      "tracked_files": [
+        "automation.toml"
+      ],
+      "excluded_files": [
+        "memory.md"
+      ],
+      "kind": "cron",
+      "sync_required": true
+    },
+    {
+      "id": "pull6github-18h",
+      "label": "PULL-JOURNAUX 18H",
+      "local_runtime_path": "C:/Users/engue/.codex/automations/pull6github-18h",
+      "github_mirror_path": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS/pull6github-18h",
+      "tracked_files": [
+        "automation.toml"
+      ],
+      "excluded_files": [
+        "memory.md"
+      ],
+      "kind": "cron",
+      "sync_required": true
+    },
+    {
+      "id": "request",
+      "label": "REQUEST 13H",
+      "local_runtime_path": "C:/Users/engue/.codex/automations/request",
+      "github_mirror_path": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS/request",
+      "tracked_files": [
+        "automation.toml"
+      ],
+      "excluded_files": [
+        "memory.md"
+      ],
+      "kind": "cron",
+      "sync_required": true
+    },
+    {
+      "id": "request-22h",
+      "label": "REQUEST 22H",
+      "local_runtime_path": "C:/Users/engue/.codex/automations/request-22h",
+      "github_mirror_path": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS/request-22h",
+      "tracked_files": [
+        "automation.toml"
+      ],
+      "excluded_files": [
+        "memory.md"
+      ],
+      "kind": "cron",
+      "sync_required": true
+    }
+  ]
+}
+
