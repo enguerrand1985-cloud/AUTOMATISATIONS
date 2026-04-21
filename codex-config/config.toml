@@ -1,0 +1,38 @@
+model = "gpt-5.4"
+model_reasoning_effort = "high"
+sandbox_mode = "danger-full-access"
+[windows]
+sandbox = "unelevated"
+
+[plugins."google-drive@openai-curated"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."cloudflare@openai-curated"]
+enabled = true
+
+[plugins."hugging-face@openai-curated"]
+enabled = true
+
+[projects.'C:\Users\engue']
+trust_level = "trusted"
+
+[projects.'C:\Users\engue\OneDrive - Enguerrand Kalfaian']
+trust_level = "trusted"
+
+[projects.'C:\Users\engue\__SYSTEME - GITHUB__']
+trust_level = "trusted"
+
+[projects.'C:\Users\engue\__SYSTEME - GITHUB__\JOURNAUX']
+trust_level = "trusted"
+
+[features]
+multi_agent = true

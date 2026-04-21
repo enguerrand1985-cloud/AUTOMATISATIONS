@@ -3,6 +3,7 @@
 ## 1. Objet
 Cette regle formalise la synchronisation entre :
 - le runtime local des automatisations dans `C:\Users\engue\.codex\automations`
+- la configuration runtime Codex dans `C:\Users\engue\.codex\config.toml`
 - et leur miroir versionne dans `C:\Users\engue\__SYSTEME - GITHUB__\AUTOMATISATIONS`
 
 Le depot GitHub `AUTOMATISATIONS` sert a :
@@ -23,6 +24,7 @@ Sens retenu par defaut :
 ## 3. Artefacts synchronisables
 Peuvent etre repercutes dans `AUTOMATISATIONS` :
 - `automation.toml`
+- `config.toml`
 - un index canonique des automatisations connues
 - une regle de synchronisation
 - une documentation courte par automation si utile
@@ -40,6 +42,7 @@ Ne doivent pas etre versionnes :
 ## 4. Structure cible
 Format recommande :
 - `C:\Users\engue\__SYSTEME - GITHUB__\AUTOMATISATIONS\<automation_id>\automation.toml`
+- `C:\Users\engue\__SYSTEME - GITHUB__\AUTOMATISATIONS\codex-config\config.toml`
 - `C:\Users\engue\__SYSTEME - GITHUB__\AUTOMATISATIONS\INDEX__AUTOMATISATIONS.json`
 - `C:\Users\engue\__SYSTEME - GITHUB__\AUTOMATISATIONS\REGLE__AUTOMATISATIONS_SYNC.md`
 
@@ -58,6 +61,7 @@ Types de changements a repercuter :
 - `reasoning_effort`
 - `execution_environment`
 - `cwds`
+- configuration globale Codex dans `config.toml`
 - ajout ou suppression d une automation
 
 ## 6. Politique de derive
@@ -106,4 +110,3 @@ STOP si :
 - le miroir GitHub et le runtime local ont diverge des deux cotes
 - une automation expose un secret ou une donnee sensible dans son prompt ou ses metadonnees
 - une ecriture locale devrait modifier un etat runtime non declaratif
-

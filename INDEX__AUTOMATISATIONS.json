@@ -14,9 +14,11 @@
     "truth_direction": "local_active_to_github",
     "automation_target": "prepare-sync",
     "runtime_truth": "C:/Users/engue/.codex/automations",
+    "codex_config_runtime_truth": "C:/Users/engue/.codex/config.toml",
     "versioned_mirror": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS",
     "versioned_payload": [
-      "automation.toml"
+      "automation.toml",
+      "config.toml"
     ],
     "excluded_runtime_payload": [
       "memory.md",
@@ -27,6 +29,23 @@
     ],
     "conflict_policy": "stop_on_conflict_both_sides"
   },
+  "runtime_configs": [
+    {
+      "id": "codex-config",
+      "label": "Codex global config",
+      "local_runtime_path": "C:/Users/engue/.codex/config.toml",
+      "github_mirror_path": "C:/Users/engue/__SYSTEME - GITHUB__/AUTOMATISATIONS/codex-config/config.toml",
+      "tracked_files": [
+        "config.toml"
+      ],
+      "kind": "runtime-config",
+      "sync_required": true,
+      "notes": [
+        "Configuration TOML globale visible dans les parametres Codex.",
+        "Miroir versionne pour relecture et evolution GitHub-first par System IA."
+      ]
+    }
+  ],
   "automations": [
     {
       "id": "pull-github",
@@ -86,4 +105,3 @@
     }
   ]
 }
-
